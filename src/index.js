@@ -41,6 +41,7 @@ export default class Api {
           });
         }
         const { data } = await this.refreshRequest;
+        this.refreshRequest = null;
         this.token = data.token;
         this.refreshToken = data.refreshToken;
         const newRequest = {
